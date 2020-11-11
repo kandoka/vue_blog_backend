@@ -1,9 +1,10 @@
 package com.kandoka.blog.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import com.kandoka.blog.common.lang.Result;
+import com.kandoka.blog.entity.Blog;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -14,7 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-09-09
  */
 @RestController
-@RequestMapping("/blog")
 public class BlogController {
 
+    @GetMapping("/blogs")
+    public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
+        return Result.succ(null);
+    }
+
+    @GetMapping("/blog/{id}")
+    public Result detail(@PathVariable(name = "id") Long id) {
+        return Result.succ(null);
+    }
+
+    @GetMapping("/blog/edit")
+    public Result edit(@Validated @RequestBody Blog blog) {
+        return Result.succ(null);
+    }
 }
