@@ -35,6 +35,7 @@ public class Blog implements Serializable {
     @NotBlank(message = "标题不能为空")
     private String title;
 
+    @NotBlank(message = "简介不能为空")
     private String description;
 
     @NotBlank(message = "内容不能为空")
