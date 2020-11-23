@@ -54,8 +54,8 @@ public class AccountController {
         //登录成功后，根据user id生成jwt
         String jwt = jwtUtils.generateToken(user.getId());
 
-        System.out.println("===========login=========");
-        System.out.println("jwt: "+jwt);
+//        System.out.println("===========login=========");
+//        System.out.println("jwt: "+jwt);
 
         response.setHeader("Authorization", jwt);
         response.setHeader("Access-control-Expose-Headers", "Authorization");
