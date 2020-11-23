@@ -54,8 +54,11 @@ public class AccountController {
         //登录成功后，根据user id生成jwt
         String jwt = jwtUtils.generateToken(user.getId());
 
-        response.setHeader("Authentication", jwt);
-        response.setHeader("Access-control-Expose-Headers", "Authentication");
+        System.out.println("===========login=========");
+        System.out.println("jwt: "+jwt);
+
+        response.setHeader("Authorization", jwt);
+        response.setHeader("Access-control-Expose-Headers", "Authorization");
 
         //返回用户信息
         return Result.succ(MapUtil.builder()
