@@ -25,12 +25,9 @@ import javax.validation.constraints.NotBlank;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("m_blog")
-public class Blog implements Serializable {
+public class Blog extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
 
     private Long userId;
 
@@ -43,10 +40,5 @@ public class Blog implements Serializable {
     @NotBlank(message = "内容不能为空")
     private String content;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime created;
-
     private Integer status;
-
-
 }

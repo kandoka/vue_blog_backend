@@ -35,7 +35,7 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
-    @GetMapping("/blogs")
+        @GetMapping("/blogs")
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
         //一页5条记录
         Page page = new Page(currentPage, 5);

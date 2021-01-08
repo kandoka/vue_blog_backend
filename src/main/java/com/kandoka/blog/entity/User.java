@@ -24,12 +24,9 @@ import javax.validation.constraints.NotBlank;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("m_user")
-public class User implements Serializable {
+public class User extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
 
     @NotBlank(message = "昵称不能为空")
     private String username;
@@ -44,9 +41,5 @@ public class User implements Serializable {
 
     private Integer status;
 
-    private LocalDateTime created;
-
     private LocalDateTime lastLogin;
-
-
 }
